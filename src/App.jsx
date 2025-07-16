@@ -18,6 +18,8 @@ const getRandomColor = () => {
   return colores[i];
 };
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/frases";
+
 const App = () => {
   const [frase, setFrase] = useState(null);
   const [color] = useState(getRandomColor());
@@ -37,7 +39,7 @@ const App = () => {
   useEffect(() => {
     const obtenerFrase = async () => {
       try {
-        const res = await fetch("http://localhost:5000/frases");
+        const res = await fetch(API_URL);
         const data = await res.json();
         setFrase(data);
       } catch (err) {
@@ -56,7 +58,7 @@ const App = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/frases", {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ frase: nuevaFrase, autor: nuevoAutor }),
