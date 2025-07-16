@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "homepage": "https://RicVeraPerez.github.io/Random-Quotes-App/"
+    "homepage": "https://RicVeraPerez.github.io/Random-Quotes/"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
